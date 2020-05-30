@@ -36,11 +36,16 @@ function App() {
       })
     )
   }
+  function removeTodo(id) {
+    setTodos(
+      todos.filter((todo) => todo.id !== id)//vratice one koji nemaju isti id kao i trazeni id
+    )
+  }
   return (
     <div className="App">
       <header className="App-header">
         <TodoForm addTodo={addTodo} />
-        <TodoList todos={todos} toggleComplited={toggleComplited} />
+        <TodoList todos={todos} toggleComplited={toggleComplited} removeTodo={removeTodo} />
       </header>
     </div>
   );
